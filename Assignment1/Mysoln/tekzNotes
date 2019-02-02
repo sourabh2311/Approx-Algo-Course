@@ -1,0 +1,9 @@
+Tekz notes
+
+Coordinates are default in cm, if you want it to be in mm, you must specifiy it and there our other units too.
+\draw[red, very thick] (0, 0) -- (4, 0);
+\draw (0, 0) rectangle (4, 4);
+similarly we can draw circle where first coordinates are for center second parameter is for radius mentioned as (2cm), for ellipse second parameter contains both the radius like (4cm and 1cm)
+\draw (0, 0) arc (0:60:4); arc of a circle with center at origin and from 0 to 60 degree of radius 4.
+for color instead of draw, use \fill
+\fill[blue!50] means will mix blue with white in 1:1 ratio, \fill[blue!50!red]
