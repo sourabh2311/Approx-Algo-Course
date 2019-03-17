@@ -1,0 +1,254 @@
+% Presentation Template: https://www.sharelatex.com/templates/presentations/conference-presentation
+
+
+\documentclass{beamer}
+
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+\newcommand{\iph}[2]{
+    \includegraphics[width=#1\textwidth,height=#1\textheight,keepaspectratio]{#2}
+}
+\newcommand{\ph}[1]{
+    \includegraphics[width=0.5\textwidth,height=0.5\textheight,keepaspectratio]{#1}
+}
+
+\title{PTAS For MVC On Planar Graphs}
+
+\author{Sourabh Aggarwal}
+
+\institute[IIT Palakkad] % (optional, but mostly needed)
+{
+  Department of Computer Science And Engineering\\
+  IIT Palakkad
+}
+
+\date{March 2019}
+
+\subject{Theoretical Computer Science}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Prerequisite}
+
+\subsection{Outerplanar Graph}
+
+\begin{frame}{Outerplanar Graphs}
+\begin{block}{Definition}
+    A graph is called outerplanar (1-outerplanar) if it has an embedding in the plane such that every vertex lies on the unbounded face.
+\end{block}
+\begin{block}{In Simple Terms}
+    $\Leftrightarrow$ has a planar drawing for which all vertices belong to the outer face of the drawing.
+\end{block}
+% \begin{theorem}
+% There are separate environments for theorems, examples, definitions and proofs.
+% \end{theorem}
+\end{frame}
+\begin{frame}{Outerplanar Graphs}
+\begin{example}
+    \ph{o1}
+\end{example}
+\end{frame}
+
+\begin{frame}{Outerplanar Graphs}
+\begin{example}
+    \ph{o2}
+\end{example}
+\end{frame}
+
+\begin{frame}{Outerplanar Graphs}
+\begin{example}
+    Is this outerplanar?
+
+    \ph{o3}
+
+
+\end{example}
+\end{frame}
+    
+\begin{frame}{Outerplanar Graphs}
+\begin{example}
+    Yes, as it is isomorphic to the following graph.
+
+    \ph{o4}
+
+
+\end{example}
+\end{frame}
+
+
+\begin{frame}{Outerplanar Graphs}
+\begin{example}
+    Is this outerplanar?
+
+    \ph{o5}
+
+
+\end{example}
+\end{frame}
+
+
+\begin{frame}{Outerplanar Graphs}
+\begin{example}
+    No, but it is planar.
+
+    \ph{o6}
+
+
+\end{example}
+\end{frame}
+
+\begin{frame}{Outerplanar Graphs}
+\begin{block}{Definition}
+    Given a planar embedding E of a planar graph G, we
+    define k-level nodes according to the faces of the embedding. Every node on the exterior face is called an exterior
+    or level 1 node. Exterior edges are defined analogously. In each
+    step, starting at 1, remove all nodes on the exterior face.
+    Repeat until there are no nodes left. The level of a node
+    is the step in which it was removed. Using an appropriate data structure for the planar embedding, such as the
+    one used by Lipton and Tarjan [Lipton and Tarjan,
+    1979], this can be done in linear time.
+    A planar embedding is called k-outerplanar if there are
+    no nodes of level $>$ k, which means the algorithm terminates after at most k steps. A planar graph is called
+    k-outerplanar if it has a k-outerplanar embedding. 
+\end{block}
+\end{frame}
+\begin{frame}
+    \begin{example}
+        \iph{0.75}{o7}
+    \end{example}
+\end{frame}
+\subsection{Fixed Parameter Tractability}
+\begin{frame}
+    \begin{block}{Definition}
+        A problem is considered fixed parameter tractable if an algorithm exists which solves the problem in running time $f(k) * n^{O(1)}$ where $k$ is an additional parameter depending upon input and n is the size of the input (in our case we will treat is as number of nodes) and $f$ is an arbitrary function depending only on $k$.
+    \end{block}
+
+\end{frame}
+\section{High Level Plan}
+\begin{frame}{\secname}
+    We will use this new notion of $k$-outerplanarity to construct a polynomial time approximation scheme for maximum independent set on planar graphs, which can be
+easily adapted to other NP-complete problems. The goal
+is an algorithm that, for a freely chosen but fixed $k$, solves maximum independent set with an approximation ratio
+of $k / (k + 1)$ and a linear complexity with respect to the
+number of nodes n.
+Basically, we want to exactly solve maximum independent on disjunct subgraphs that are $k$-outerplanar and
+ignore some nodes in the graph to merge the subgraphs
+without violating the conditions of the maximum independent set.
+\newline
+\newline
+\newline
+\textbf{PS}: Approximation Ratio? For maximization problems it is atmost $(1 - \epsilon)$ therefore fix $k = (1/\epsilon) - 1$ (do math).
+\end{frame}
+\section{Bakers Algorithm}
+\subsection{Theorem 1}
+\begin{frame}{\secname : \subsecname}
+   \begin{theorem} 
+    [Baker, 1994] Let $k$ be a positive integer. Given a $k$-outerplanar embedding of a $k$-outerplanar
+    graph G, an optimal solution for maximum independent
+    set can be obtained in time $O(8^kn)$, where $n$ is the number of nodes.
+    \end{theorem}
+
+    Its proof will be done later.
+\end{frame}
+\subsection{Main Algorithm}
+\begin{frame}{\secname : \subsecname}
+    \begin{enumerate}
+        \item Generate a planar embedding of G using the linear time algorithm of Hopcroft and Tarjan [Hopcroft
+        and Tarjan, 1974] and compute the level of every
+        node.
+        \item For each $i$; $0 \leq i \leq k$, do the following:
+        \begin{enumerate}
+        \item Remove all nodes where the nodes level
+        mod (k + 1) equals i, splitting the graph into
+        components with an (already computed) k-outerplanar embedding.
+        \item Use Theorem 1 to exactly solve maximum independent set on all those components and
+        take the union of the solutions. This is possible as the components are disjunct and no
+        edges can exist between two components.
+        \end{enumerate}
+        \item Take the best solution for all $i$ as the solution for
+        the entire graph.
+    \end{enumerate}
+\end{frame}
+\subsection{Analysis of the given Algorithm}
+\begin{frame}{\secname : \subsecname}
+    To see that this gives a solution with approximation ratio
+$k/(k + 1)$, consider the optimal solution $S_{OPT}$ . For some $i$
+as defined above, at most $1/(k + 1)$ of the nodes in $S_{OPT}$
+are at a level congruent to $i$ 
+
+[As suppose this was not the case $\rightarrow S_{OPT} > (k + 1) * (1/(k + 1) * S_{OPT})$ i.e. $S_{OPT} > S_{OPT}$ which is absurd]. 
+
+As the other components
+are solved exactly, the union of their solutions has at least
+the size of $S_{OPT} - 1/(k + 1) * S_{OPT}$ i.e. $k/(k + 1) * S_{OPT}$ giving our desired approximation factor. 
+
+[As $Rem \leq S_{OPT}/(k + 1) \rightarrow -Rem \geq -S_{OPT}/(k + 1) \rightarrow S_{OPT} - Rem \geq k/(k+1)*S_{OPT}$]
+
+This leads to the second theorem:
+\end{frame}
+\subsection{Theorem 2}
+\begin{frame}{\secname : \subsecname}
+    \begin{theorem}
+        [Baker, 1994] For fixed $k$, there is an
+$O(8^kkn)$-time algorithm for maximum independent set
+that achieves a solution of size at least $k/k+1$ optimal for
+general planar graphs. 
+    \end{theorem}
+
+    We have proved this [assuming theorem 1]. So, what remains is to prove theorem 1
+\end{frame}
+\end{document}
+
+

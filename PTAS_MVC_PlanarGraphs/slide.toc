@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Prerequisite}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Outerplanar Graph}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Fixed Parameter Tractability}{13}{0}{1}
+\beamer@sectionintoc {2}{High Level Plan}{15}{0}{2}
+\beamer@sectionintoc {3}{Bakers Algorithm}{16}{0}{3}
+\beamer@subsectionintoc {3}{1}{Theorem 1}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{Main Algorithm}{18}{0}{3}
+\beamer@subsectionintoc {3}{3}{Analysis of the given Algorithm}{20}{0}{3}
+\beamer@subsectionintoc {3}{4}{Theorem 2}{22}{0}{3}
