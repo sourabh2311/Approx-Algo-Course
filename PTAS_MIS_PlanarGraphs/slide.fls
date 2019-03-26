@@ -377,6 +377,9 @@ INPUT ./lin3.png
 INPUT lin4.png
 INPUT ./lin4.png
 INPUT ./lin4.png
+INPUT lin5.png
+INPUT ./lin5.png
+INPUT ./lin5.png
 OUTPUT slide.nav
 OUTPUT slide.toc
 OUTPUT slide.snm

@@ -329,7 +329,7 @@ general planar graphs.
     \begin{itemize}
         \item Replace each bridge (x, y) by two
         edges between x and y. This will allow us to treat a bridge as a face rather
-        than as a special case. Call the resulting graph $G$.
+        than as a special case. Call the resulting graph $G$ [Will the $|MIS|$ change?].
 
         \item The maximum independent set for $G$ will be computed by recursively
 processing an ordered, rooted tree $\bar{G}$ that represents the structure of G. Each
@@ -438,6 +438,103 @@ components until G is connected.
 
 \end{frame}
 
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{So what have we achieved so far?}
+        Our aim is to calculate MIS for G with the help of DP, for that we converted have G to a representable tree. Now DP on trees and on DAG is almost always possible. 
+        
+        So, now we will calculate MIS for G using $\bar{G}$ in an unquestionable manner so that it is clear as to why this tree structure represents G. 
+        
+        Also recall that in $\bar{G}$ each vertex other than root represents an edge of the original graph (provided x $\neq$ y) and if we construct MIS solution considering all edges of G then that solution will neccessarily be correct.
+    \end{block}
+\end{frame}
+
+
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{MIS Calculation}
+        Computation of the maximum independent set proceeds as follows: The
+        result of processing a vertex $v$ labeled (x, y) is a table that gives the sizes of
+        maximum independent sets for the subgraph represented by the subtree rooted at $v$, according to whether the nodes x and y are in the set. That is, for each of
+        the four possible bit pairs representing whether each of x and y is in the set,
+        the table contains the size of the maximum independent set for the subgraph. 
+    \end{block}
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \iph{0.9}{lin5}
+
+\end{frame}
+
+
+
+\begin{framefont}{\small}
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Details of psuedo code}
+        The details not given in above figure are as follows: The table for a leaf u
+representing an edge (x, y) specifies that the size of a maximum independent
+set for the subgraph is 1 if exactly one endpoint of (x, y) is in the set, O if
+neither is in it, and undefined (illegal) if both are in it. The procedure merge
+works as follows: For some z, the current table T has a value for each bit pair
+representing x and z, the child c has label (z, w) for some w, and table(c) has
+a value for each bit pair representing z and w. The updated table T has a
+value for each bit pair representing x and w. This updated value is found for
+bit pair ($b_1$, $b_3$) (representing x and w) by taking the maximum over 0–1 values
+of bit $b_2$ of V(T) + V(table(c)) - $b_2$, where V(T) is the value of T for $(b_1, b_2)$
+(representing x and z) and V(table(c)) is the value of table(c) for $(b_2, b_3)$
+(representing z and w). Subtracting $b_2$ prevents counting z twice if z is in the
+maximum independent set. 
+    \end{block}
+\end{frame}
+\end{framefont}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Details of psuedo code}
+        When all of the children’s tables have been
+        processed, T has a value for each bit pair representing x and y. Finally, the
+        label (x, y) is incorporated into T by the procedure adjust. In particular, if
+        x = y, the table entry is set to “undefined” for each bit pair requiring exactly
+        one of x and y to be in the maximum independent set, and the value
+        representing the inclusion of both x and y in the set is decremented by one to
+        avoid counting x = y twice. If x $\neq$ y, the table entry for the bit pair specifying
+        that both x and y are in the set is set to “undefined,” because (x, y ) represents
+        an edge.
+        When table is called on the root (r, r) of the tree, it results in a table with
+        entries for four bit pairs. Thanks to the procedure adjust, two of the values are
+        undefined because they represent inconsistency as to whether r is in the
+        maximum independent set. The larger of the two remaining values is the size of
+        the maximum independent set for the graph.
+    \end{block}
+\end{frame}
+
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Analysing Time Complexity}
+        Clearly in constructing $\bar{G}$, number of nodes are for each graph edge, for cutpoints and our special vertex root. So it is linear in $n$ (original number of nodes). And our DP solution is more or less like a tree traversal and hence that is also linear in $n$. So the time complexity is $O(n)$.
+    \end{block}
+\end{frame}
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+    
+  \begin{thebibliography}{10}
+    
+    
+  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short. 
+
+  \bibitem{baker}
+    BRENDA S. BAKER
+    \newblock Approximation Algorithms for NP-Complete Problems
+    on Planar Graphs
+    \newblock {\em Journal of the ACM}, Volume 41 Issue 1, Jan. 1994, Pages 153-180.
+  \end{thebibliography}
+\end{frame}
 \end{document}
 
 
