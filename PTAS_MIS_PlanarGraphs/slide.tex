@@ -1,7 +1,26 @@
 % Presentation Template: https://www.sharelatex.com/templates/presentations/conference-presentation
 
-
 \documentclass{beamer}
+
+\usepackage{xcolor}  
+\usepackage{environ}
+
+%
+% Custom font for a frame.
+%
+
+\newcommand{\customframefont}[1]{
+\setbeamertemplate{itemize/enumerate body begin}{#1}
+\setbeamertemplate{itemize/enumerate subbody begin}{#1}
+}
+
+\NewEnviron{framefont}[1]{
+\customframefont{#1} % for itemize/enumerate
+{#1 % For the text outside itemize/enumerate
+\BODY
+}
+\customframefont{\normalsize}
+}
 
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
@@ -43,7 +62,7 @@
     \includegraphics[width=0.5\textwidth,height=0.5\textheight,keepaspectratio]{#1}
 }
 
-\title{PTAS For MVC On Planar Graphs}
+\title{PTAS For MIS On Planar Graphs}
 
 \author{Sourabh Aggarwal}
 
@@ -81,6 +100,50 @@
 % Section and subsections will appear in the presentation overview
 % and table of contents.
 \section{Prerequisite}
+\subsection{Recall}
+
+\begin{frame}{\secname : \subsecname}
+\begin{block}{Example}
+    What is $|MIS|$ for $S_n$?
+
+    \vspace{2\baselineskip}
+    \ph{sn}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{\secname : \subsecname}
+\begin{block}{MIS}
+    What is $|MIS|$ for $S_n$? Ans. \textcolor{blue}{$n - 1$}
+
+    \vspace{2\baselineskip}
+    \ph{sn}
+
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{\secname : \subsecname}
+\begin{block}{Example}
+    What is $|MIS|$ for $K_n$?
+\end{block}
+\end{frame}
+
+
+\begin{frame}{\secname : \subsecname}
+\begin{block}{MIS}
+    What is $|MIS|$ for $K_n$? Ans. \textcolor{blue}{1}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{\secname : \subsecname}
+\begin{block}{Euler's formula}
+    If a finite, connected, planar graph is drawn in the plane without any edge intersections, and v is the number of vertices, e is the number of edges and f is the number of faces (regions bounded by edges, including the outer, infinitely large region), then
+    $v - e + f = 2$
+\end{block}
+\end{frame}
 
 \subsection{Outerplanar Graph}
 
@@ -153,7 +216,18 @@
 \begin{block}{Definition}
     Given a planar embedding E of a planar graph G, we
     define k-level nodes according to the faces of the embedding. Every node on the exterior face is called an exterior
-    or level 1 node. Exterior edges are defined analogously. In each
+    or level 1 node. Exterior edges are defined analogously. Call a cycle of
+    level $i$ nodes a $level$ $i$ $face$ if it is an interior face in the subgraph induced by
+    the level $i$ nodes. For each $level$ $i$ $face$ $f$, let $G_f$ be the subgraph induced by all
+    nodes placed inside $f$ in this embedding. Then the nodes on the exterior face
+    of $G_f$ are at level $i + 1$. 
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Outerplanar Graphs}
+\begin{block}{Definition}
+    Basically, in each
     step, starting at 1, remove all nodes on the exterior face.
     Repeat until there are no nodes left. The level of a node
     is the step in which it was removed. Using an appropriate data structure for the planar embedding, such as the
@@ -161,7 +235,7 @@
     1979], this can be done in linear time.
     A planar embedding is called k-outerplanar if there are
     no nodes of level $>$ k, which means the algorithm terminates after at most k steps. A planar graph is called
-    k-outerplanar if it has a k-outerplanar embedding. 
+    k-outerplanar if it has a k-outerplanar embedding.  
 \end{block}
 \end{frame}
 \begin{frame}
@@ -189,7 +263,7 @@ without violating the conditions of the maximum independent set.
 \newline
 \newline
 \newline
-\textbf{PS}: Approximation Ratio? For maximization problems it is atmost $(1 - \epsilon)$ therefore fix $k = (1/\epsilon) - 1$ (do math).
+\textbf{PS}: Approximation Ratio? For maximization problems it is atleast $(1 - \epsilon)$ therefore fix $k = (1/\epsilon) - 1$ (do math).
 \end{frame}
 \section{Bakers Algorithm}
 \subsection{Theorem 1}
@@ -249,6 +323,121 @@ general planar graphs.
 
     We have proved this [assuming theorem 1]. So, what remains is to prove theorem 1
 \end{frame}
+\subsection{Linear Time Algorithm for Outerplanar Graphs}
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Given a connected outerplanar graph, do the following}
+    \begin{itemize}
+        \item Replace each bridge (x, y) by two
+        edges between x and y. This will allow us to treat a bridge as a face rather
+        than as a special case. Call the resulting graph $G$.
+
+        \item The maximum independent set for $G$ will be computed by recursively
+processing an ordered, rooted tree $\bar{G}$ that represents the structure of G. Each
+leaf of $\bar{G}$ will represent an exterior edge of $G$ and every other vertex will represent
+a face of $G$ and will be called a $face$ vertex. $\bar{G}$ is constructed as follows:
+        \begin{enumerate}
+        \item Construct a graph vertex for every interior face and
+        every exterior edge.
+
+        \item Draw edges between every edge vertex and the vertex of the face the edge is contained in, and between
+        every two vertices of faces that share an edge.
+
+        \item Need to handle cut points (presented later)      
+        \end{enumerate}
+    \end{itemize}
+    \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{\secname : \subsecname}
+        \iph{0.9}{lin1}
+
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Question}
+        Why are we getting a Tree? 
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Question}
+        Why are we getting a Tree? Will we always get a tree for a planar embedding?
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Question}
+        Why are we getting a Tree? Will we always get a tree for a planar embedding - Ans. \textcolor{blue}{No, consider planar embedding of $K_4$. So, this property is actually the result of outerplanarity condition.}
+    \end{block}
+
+\end{frame}
+
+
+
+\begin{framefont}{\small}
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Labelling our tree}
+        \begin{enumerate}
+        \item The planar embedding induces a cyclic ordering on the
+        edges of each vertex in the tree [for our discussion, we will follow counterclockwise orientation]. Choosing a face vertex $v$ as the root and
+        choosing which child of $v$ is to be its leftmost child determine the parent and
+        ordering of children for every other vertex of G [We will see this in diagram].
+        \item Label the vertices of $\bar{G}$ recursively, as follows: Label each leaf of the tree
+        with the oriented exterior edge it represents. Label each face vertex with the
+        first and last nodes in its children’s labels.
+        \item If a face vertex is labeled (x, y), the leaves of its subtree represent a directed
+        walk of exterior edges in a counterclockwise direction from x to y. For the
+        root, x = y and the directed walk covers all the exterior edges. For any other
+        face vertex $v$, x $\neq$ y, and (x, y) is an interior edge shared by the face
+        represented by $v$ and the face represented by its parent in the tree.
+        \end{enumerate}
+    \end{block}
+
+\end{frame}
+\end{framefont}
+
+
+\begin{frame}{\secname : \subsecname}
+    \iph{0.9}{lin2}
+
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Handling Cutpoints}
+        Cutpoints are nodes,
+whose removal disconnects the graph. As we removed bridges, a cutpoint
+is a node where at least two faces meet without
+sharing an edge, therefore disconnecting the tree for
+G. Draw an edge between two vertices of faces that
+both contain the cutpoint and are part of different
+components until G is connected.
+    \end{block}
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \iph{0.9}{lin3}
+
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Labelling our tree}
+        Labelling is done same as before. Note that now it is possible for a face vertex labelled (x, y) and x = y in which case, the label
+        represents a cutpoint shared by two faces, as for the vertex labeled (9,9) in
+        below figure.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \iph{0.9}{lin4}
+
+\end{frame}
+
 \end{document}
 
 
