@@ -346,6 +346,12 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT slide.toc
 INPUT slide.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT mod1.png
+INPUT ./mod1.png
+INPUT ./mod1.png
+INPUT mod2.png
+INPUT ./mod2.png
+INPUT ./mod2.png
 INPUT slide.toc
 INPUT slide.toc
 INPUT slide.toc

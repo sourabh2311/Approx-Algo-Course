@@ -69,71 +69,75 @@
 \headcommand {\beamer@framepages {25}{25}}
 \headcommand {\slideentry {3}{2}{2}{26/26}{Main Algorithm}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\beamer@subsectionpages {25}{26}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{27}{Analysis of the given Algorithm}}
-\headcommand {\slideentry {3}{3}{1}{27/27}{Analysis of the given Algorithm}{0}}
+\headcommand {\slideentry {3}{2}{3}{27/27}{Main Algorithm}{0}}
 \headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {3}{3}{2}{28/28}{Analysis of the given Algorithm}{0}}
+\headcommand {\slideentry {3}{2}{4}{28/28}{Main Algorithm}{0}}
 \headcommand {\beamer@framepages {28}{28}}
-\headcommand {\beamer@subsectionpages {27}{28}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{29}{Theorem 2}}
-\headcommand {\slideentry {3}{4}{1}{29/29}{Theorem 2}{0}}
+\headcommand {\beamer@subsectionpages {25}{28}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{29}{Analysis of the given Algorithm}}
+\headcommand {\slideentry {3}{3}{1}{29/29}{Analysis of the given Algorithm}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {3}{4}{2}{30/30}{Theorem 2}{0}}
+\headcommand {\slideentry {3}{3}{2}{30/30}{Analysis of the given Algorithm}{0}}
 \headcommand {\beamer@framepages {30}{30}}
 \headcommand {\beamer@subsectionpages {29}{30}}
-\headcommand {\beamer@subsectionentry {0}{3}{5}{31}{Linear Time Algorithm for Outerplanar Graphs}}
-\headcommand {\slideentry {3}{5}{1}{31/31}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{31}{Theorem 2}}
+\headcommand {\slideentry {3}{4}{1}{31/31}{Theorem 2}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {3}{5}{2}{32/32}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{4}{2}{32/32}{Theorem 2}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {3}{5}{3}{33/33}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\beamer@subsectionentry {0}{3}{5}{33}{Linear Time Algorithm for Outerplanar Graphs}}
+\headcommand {\slideentry {3}{5}{1}{33/33}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {3}{5}{4}{34/34}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{2}{34/34}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {3}{5}{5}{35/35}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{3}{35/35}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {3}{5}{6}{36/36}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{4}{36/36}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {3}{5}{7}{37/37}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{5}{37/37}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {3}{5}{8}{38/38}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{6}{38/38}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\slideentry {3}{5}{9}{39/39}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{7}{39/39}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\slideentry {3}{5}{10}{40/40}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{8}{40/40}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {3}{5}{11}{41/41}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{9}{41/41}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\slideentry {3}{5}{12}{42/42}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{10}{42/42}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\slideentry {3}{5}{13}{43/43}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{11}{43/43}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {43}{43}}
-\headcommand {\slideentry {3}{5}{14}{44/44}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{12}{44/44}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {44}{44}}
-\headcommand {\slideentry {3}{5}{15}{45/45}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{13}{45/45}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {45}{45}}
-\headcommand {\slideentry {3}{5}{16}{46/46}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{14}{46/46}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\slideentry {3}{5}{17}{47/47}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{15}{47/47}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {3}{5}{18}{48/48}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\slideentry {3}{5}{16}{48/48}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {48}{48}}
-\headcommand {\gdef \insertmainframenumber {48}}
-\headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{48}}
-\headcommand {\beamer@sectionpages {23}{48}}
-\headcommand {\beamer@subsectionpages {31}{48}}
-\headcommand {\beamer@appendixpages {49}}
-\headcommand {\beamer@sectionpages {49}{48}}
-\headcommand {\beamer@subsectionpages {49}{48}}
-\headcommand {\sectionentry {4}{\translate {Appendix}}{49}{\translate {Appendix}}{1}}
-\headcommand {\beamer@subsectionpages {49}{48}}
-\headcommand {\beamer@subsectionentry {1}{4}{1}{49}{For Further Reading}}
-\headcommand {\slideentry {4}{1}{1}{49/49}{For Further Reading}{1}}
+\headcommand {\slideentry {3}{5}{17}{49/49}{Linear Time Algorithm for Outerplanar Graphs}{0}}
 \headcommand {\beamer@framepages {49}{49}}
-\headcommand {\beamer@partpages {49}{49}}
-\headcommand {\beamer@subsectionpages {49}{49}}
-\headcommand {\beamer@sectionpages {49}{49}}
-\headcommand {\beamer@documentpages {49}}
-\headcommand {\gdef \inserttotalframenumber {49}}
+\headcommand {\slideentry {3}{5}{18}{50/50}{Linear Time Algorithm for Outerplanar Graphs}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\gdef \insertmainframenumber {50}}
+\headcommand {\partentry {\translate {Appendix}}{1}}
+\headcommand {\beamer@partpages {1}{50}}
+\headcommand {\beamer@sectionpages {23}{50}}
+\headcommand {\beamer@subsectionpages {33}{50}}
+\headcommand {\beamer@appendixpages {51}}
+\headcommand {\beamer@sectionpages {51}{50}}
+\headcommand {\beamer@subsectionpages {51}{50}}
+\headcommand {\sectionentry {4}{\translate {Appendix}}{51}{\translate {Appendix}}{1}}
+\headcommand {\beamer@subsectionpages {51}{50}}
+\headcommand {\beamer@subsectionentry {1}{4}{1}{51}{For Further Reading}}
+\headcommand {\slideentry {4}{1}{1}{51/51}{For Further Reading}{1}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@partpages {51}{51}}
+\headcommand {\beamer@subsectionpages {51}{51}}
+\headcommand {\beamer@sectionpages {51}{51}}
+\headcommand {\beamer@documentpages {51}}
+\headcommand {\gdef \inserttotalframenumber {51}}
