@@ -204,7 +204,7 @@
 
 \begin{frame}{Outerplanar Graphs}
 \begin{example}
-    No, but it is planar.
+    No, but it is planar. \textcolor{blue}{*It is 2-outerplanar}
 
     \ph{o6}
 
@@ -263,7 +263,7 @@ without violating the conditions of the maximum independent set.
 \newline
 \newline
 \newline
-\textbf{PS}: Approximation Ratio? For maximization problems it is atleast $(1 - \epsilon)$ therefore fix $k = (1/\epsilon) - 1$ (do math).
+\textbf{PS}: Approximation Ratio? For maximization problems it is at least $(1 - \epsilon)$ therefore fix $k = (1/\epsilon) - 1$ (do math).
 \end{frame}
 \section{Bakers Algorithm}
 \subsection{Theorem 1}
@@ -274,7 +274,7 @@ without violating the conditions of the maximum independent set.
     set can be obtained in time $O(8^kn)$, where $n$ is the number of nodes.
     \end{theorem}
 
-    Its proof will be done later.
+    We won't have time to prove it, but we will prove it for 1-outerplanar graphs.
 \end{frame}
 \subsection{Main Algorithm}
 \begin{frame}{\secname : \subsecname}
@@ -323,7 +323,7 @@ As the other components
 are solved exactly, the union of their solutions has at least
 the size of $S_{OPT} - 1/(k + 1) * S_{OPT}$ i.e. $k/(k + 1) * S_{OPT}$ giving our desired approximation factor. 
 
-[As $Rem \leq S_{OPT}/(k + 1) \rightarrow -Rem \geq -S_{OPT}/(k + 1) \rightarrow S_{OPT} - Rem \geq k/(k+1)*S_{OPT}$]
+[As $Rem \leq S_{OPT}/(k + 1) \rightarrow -Rem \geq -S_{OPT}/(k + 1) \rightarrow S_{OPT} - Rem \geq k/(k+1)*S_{OPT}$ and \textit{our solution} $\geq S_{OPT} - Rem$]
 
 This leads to the second theorem:
 \end{frame}
@@ -336,7 +336,7 @@ that achieves a solution of size at least $k/k+1$ optimal for
 general planar graphs. 
     \end{theorem}
 
-    We have proved this [assuming theorem 1]. So, what remains is to prove theorem 1
+    We have proved this [assuming theorem 1]. So, what remains is to prove theorem 1.
 \end{frame}
 \subsection{Linear Time Algorithm for Outerplanar Graphs}
 \begin{frame}{\secname : \subsecname}
@@ -344,7 +344,7 @@ general planar graphs.
     \begin{itemize}
         \item Replace each bridge (x, y) by two
         edges between x and y. This will allow us to treat a bridge as a face rather
-        than as a special case. Call the resulting graph $G$ [Will the $|MIS|$ change?].
+        than as a special case. Call the resulting graph $G$. [Will the $|MIS|$ change?]
 
         \item The maximum independent set for $G$ will be computed by recursively
 processing an ordered, rooted tree $\bar{G}$ that represents the structure of G. Each
@@ -455,11 +455,11 @@ components until G is connected.
 
 \begin{frame}{\secname : \subsecname}
     \begin{block}{So what have we achieved so far?}
-        Our aim is to calculate MIS for G with the help of DP, for that we converted have G to a representable tree. Now DP on trees and on DAG is almost always possible. 
+        Our aim is to calculate MIS for G with the help of DP, for that we have converted G to a representable tree. Now DP on trees and on DAG is almost always possible. 
         
         So, now we will calculate MIS for G using $\bar{G}$ in an unquestionable manner so that it is clear as to why this tree structure represents G. 
         
-        Also recall that in $\bar{G}$ each vertex other than root represents an edge of the original graph (provided x $\neq$ y) and if we construct MIS solution considering all edges of G then that solution will neccessarily be correct.
+        Also recall that in $\bar{G}$ each vertex other than root represents an edge of the original graph (provided x $\neq$ y) and if we construct MIS solution considering all edges of G then that solution will necessarily be correct.
     \end{block}
 \end{frame}
 
@@ -487,13 +487,13 @@ components until G is connected.
     \begin{block}{Details of psuedo code}
         The details not given in above figure are as follows: The table for a leaf u
 representing an edge (x, y) specifies that the size of a maximum independent
-set for the subgraph is 1 if exactly one endpoint of (x, y) is in the set, O if
+set for the subgraph is 1 if exactly one endpoint of (x, y) is in the set, 0 if
 neither is in it, and undefined (illegal) if both are in it. The procedure merge
 works as follows: For some z, the current table T has a value for each bit pair
 representing x and z, the child c has label (z, w) for some w, and table(c) has
 a value for each bit pair representing z and w. The updated table T has a
 value for each bit pair representing x and w. This updated value is found for
-bit pair ($b_1$, $b_3$) (representing x and w) by taking the maximum over 0–1 values
+bit pair ($b_1$, $b_3$) (representing x and w) by taking the maximum over 0-1 values
 of bit $b_2$ of V(T) + V(table(c)) - $b_2$, where V(T) is the value of T for $(b_1, b_2)$
 (representing x and z) and V(table(c)) is the value of table(c) for $(b_2, b_3)$
 (representing z and w). Subtracting $b_2$ prevents counting z twice if z is in the
@@ -504,14 +504,14 @@ maximum independent set.
 
 \begin{frame}{\secname : \subsecname}
     \begin{block}{Details of psuedo code}
-        When all of the children’s tables have been
+        When all of the children's tables have been
         processed, T has a value for each bit pair representing x and y. Finally, the
         label (x, y) is incorporated into T by the procedure adjust. In particular, if
-        x = y, the table entry is set to “undefined” for each bit pair requiring exactly
+        x = y, the table entry is set to "undefined" for each bit pair requiring exactly
         one of x and y to be in the maximum independent set, and the value
         representing the inclusion of both x and y in the set is decremented by one to
         avoid counting x = y twice. If x $\neq$ y, the table entry for the bit pair specifying
-        that both x and y are in the set is set to “undefined,” because (x, y ) represents
+        that both x and y are in the set is set to "undefined" because (x, y) represents
         an edge.
         When table is called on the root (r, r) of the tree, it results in a table with
         entries for four bit pairs. Thanks to the procedure adjust, two of the values are
@@ -544,7 +544,7 @@ maximum independent set.
   % Followed by interesting articles. Keep the list short. 
 
   \bibitem{baker}
-    BRENDA S. BAKER
+    \href{https://dl.acm.org/citation.cfm?id=174650}{BRENDA S. BAKER}
     \newblock Approximation Algorithms for NP-Complete Problems
     on Planar Graphs
     \newblock {\em Journal of the ACM}, Volume 41 Issue 1, Jan. 1994, Pages 153-180.
