@@ -317,7 +317,7 @@ $k/(k + 1)$, consider the optimal solution $S_{OPT}$ . For some $i$
 as defined above, at most $1/(k + 1)$ of the nodes in $S_{OPT}$
 are at a level congruent to $i$ 
 
-[As suppose this was not the case $\rightarrow S_{OPT} > (k + 1) * (1/(k + 1) * S_{OPT})$ i.e. $S_{OPT} > S_{OPT}$ which is absurd]. 
+[As suppose this was not the case $\rightarrow$ \# no. of nodes of $S_{OPT}$ in those green layers $> (k + 1) * (1/(k + 1) * S_{OPT})$ i.e. $ > S_{OPT}$ which is absurd]. 
 
 As the other components
 are solved exactly, the union of their solutions has at least
@@ -349,7 +349,7 @@ general planar graphs.
         \item The maximum independent set for $G$ will be computed by recursively
 processing an ordered, rooted tree $\bar{G}$ that represents the structure of G. Each
 leaf of $\bar{G}$ will represent an exterior edge of $G$ and every other vertex will represent
-a face of $G$ and will be called a $face$ vertex. $\bar{G}$ is constructed as follows:
+a face of $G$ and will be called a $face$ vertex [\textcolor{blue}{*}]. $\bar{G}$ is constructed as follows:
         \begin{enumerate}
         \item Construct a graph vertex for every interior face and
         every exterior edge.
@@ -357,7 +357,7 @@ a face of $G$ and will be called a $face$ vertex. $\bar{G}$ is constructed as fo
         \item Draw edges between every edge vertex and the vertex of the face the edge is contained in, and between
         every two vertices of faces that share an edge.
 
-        \item Need to handle cut points (presented later)      
+        \item[\textcolor{blue}{*}] Need to handle cut points (presented later)      
         \end{enumerate}
     \end{itemize}
     \end{block}
